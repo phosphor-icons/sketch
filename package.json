@@ -1,0 +1,31 @@
+{
+  "name": "phosphor-sketch",
+  "version": "1.2.1",
+  "license": "MIT",
+  "homepage": "https://phosphoricons.com",
+  "author": {
+    "name": "Tobias Fried",
+    "email": "friedtm@gmail.com",
+    "url": "https://tobiasfried.com"
+  },
+  "description": "A flexible icon family for interfaces, diagrams, presentations — whatever, really.",
+  "keywords": [
+    "phosphor",
+    "icons",
+    "svg",
+    "design",
+    "interface",
+    "UI",
+    "UX",
+    "sketch",
+    "sketch-plugin"
+  ],
+  "repository": "github:phosphor-icons/phosphor-sketch",
+  "private": false,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  }
+}

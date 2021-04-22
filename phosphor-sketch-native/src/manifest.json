@@ -1,0 +1,24 @@
+{
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "commands": [
+    {
+      "name": "Icon Palette",
+      "identifier": "phosphor-icons.icon-palette-identifier",
+      "script": "./icon-palette.js",
+      "shortcut": "cmd shift i",
+      "handlers": {
+        "run": "onRun",
+        "actions": {
+          "Shutdown": "onShutdown"
+        }
+      }
+    }
+  ],
+  "menu": {
+    "title": "Phosphor Icons",
+    "items": [
+      "phosphor-icons.icon-palette-identifier"
+    ]
+  }
+}
