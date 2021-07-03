@@ -1,7 +1,7 @@
 import * as Icons from "phosphor-react";
-import { IconEntry, IconCategory } from ".";
+import { IconCategory } from ".";
 
-export const icons: ReadonlyArray<IconEntry> = [
+export const icons = [
   {
     name: "activity",
     categories: [IconCategory.HEALTH],

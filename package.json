@@ -2,6 +2,7 @@
   "name": "phosphor-sketch",
   "version": "1.2.1",
   "license": "MIT",
+  "private": false,
   "homepage": "https://phosphoricons.com",
   "author": {
     "name": "Tobias Fried",
@@ -9,6 +10,7 @@
     "url": "https://tobiasfried.com"
   },
   "description": "A flexible icon family for interfaces, diagrams, presentations — whatever, really.",
+  "repository": "github:phosphor-icons/phosphor-sketch",
   "keywords": [
     "phosphor",
     "icons",
@@ -20,12 +22,42 @@
     "sketch",
     "sketch-plugin"
   ],
-  "repository": "github:phosphor-icons/phosphor-sketch",
-  "private": false,
+  "engines": {
+    "sketch": ">=3.0"
+  },
+  "skpm": {
+    "name": "Phosphor Icons",
+    "manifest": "src/manifest.json",
+    "main": "phosphor-icons.sketchplugin",
+    "assets": [
+      "assets/**/*"
+    ],
+    "sketch-assets-file": "sketch-assets/icons.sketch"
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "skpm-build",
+    "watch": "skpm-build --watch",
+    "start": "skpm-build --watch",
+    "postinstall": "npm run build && skpm-link"
+  },
+  "resources": [
+    "resources/**/*.js"
+  ],
+  "dependencies": {
+    "fuse.js": "^6.4.6",
+    "phosphor-react": "^1.2.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-dropdown-select": "^4.7.4",
+    "react-use": "^17.2.4",
+    "recoil": "^0.3.1",
+    "sketch-module-web-view": "^3.1.4"
+  },
+  "devDependencies": {
+    "@skpm/builder": "^0.7.4",
+    "@skpm/extract-loader": "^2.0.2",
+    "css-loader": "^3.2.0",
+    "html-loader": "^0.5.5"
   }
 }

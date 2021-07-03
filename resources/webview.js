@@ -1,11 +1,10 @@
 import React from "react";
 import * as ReactDOM from "react-dom";
 import { RecoilRoot } from "recoil";
-import "./index.css";
 
-import AppContainer from "./components/AppContent/AppContent";
+import AppContainer from "./components/AppContent.jsx";
 
-const App: React.FC<{}> = () => {
+const App = () => {
   return (
     <RecoilRoot>
       <AppContainer />

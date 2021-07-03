@@ -1,14 +1,14 @@
 import React, { Suspense, useEffect } from "react";
 import { useSetRecoilState } from "recoil";
 
-import { systemDarkModeAtom } from "../../state";
-import Toolbar from "../Toolbar/Toolbar";
-import IconGrid from "../IconGrid/IconGrid";
-import Footer from "../Footer/Footer";
+import { systemDarkModeAtom } from "../state";
+import Toolbar from "./Toolbar";
+import IconGrid from "./IconGrid";
+import Footer from "./Footer";
 
 const darkMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-const AppContainer: React.FC<{}> = () => {
+const AppContainer = () => {
   const setDarkMode = useSetRecoilState(systemDarkModeAtom);
 
   useEffect(() => {
@@ -21,6 +21,7 @@ const AppContainer: React.FC<{}> = () => {
     } catch (e) {
       console.error(e);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

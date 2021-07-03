@@ -1,12 +1,9 @@
 import React from "react";
 
-import "./Toolbar.css";
 import StyleInput from "./StyleInput";
 import SearchInput from "./SearchInput";
 
-type ToolbarProps = {};
-
-const Toolbar: React.FC<ToolbarProps> = () => {
+const Toolbar = () => {
   return (
     <menu className="toolbar" id="toolbar">
       <div className="toolbar-contents">

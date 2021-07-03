@@ -3,13 +3,10 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { useDebounce } from "react-use";
 import { X, HourglassHigh } from "phosphor-react";
 
-import { searchQueryAtom, systemDarkModeAtom } from "../../state";
-import "./SearchInput.css";
+import { searchQueryAtom, systemDarkModeAtom } from "../state";
 
-type SearchInputProps = {};
-
-const SearchInput: React.FC<SearchInputProps> = () => {
-  const [value, setValue] = useState<string>("");
+const SearchInput = () => {
+  const [value, setValue] = useState("");
   const [query, setQuery] = useRecoilState(searchQueryAtom);
   const isDarkMode = useRecoilValue(systemDarkModeAtom);
   void query;

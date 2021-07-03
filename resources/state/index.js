@@ -1,7 +1,7 @@
 import { atom, selector } from "recoil";
 import Fuse from "fuse.js";
 
-import { IconEntry, IconStyle } from "../lib";
+import { IconStyle } from "../lib";
 import { icons } from "../lib/icons";
 
 const fuse = new Fuse(icons, {
@@ -11,12 +11,12 @@ const fuse = new Fuse(icons, {
   useExtendedSearch: true,
 });
 
-export const systemDarkModeAtom = atom<boolean>({
+export const systemDarkModeAtom = atom({
   key: "systemDarkMode",
   default: window.matchMedia("(prefers-color-scheme: dark)").matches,
 });
 
-export const iconWeightAtom = atom<IconStyle>({
+export const iconWeightAtom = atom({
   key: "iconWeightAtom",
   default: IconStyle.REGULAR,
 });
@@ -26,7 +26,7 @@ export const searchQueryAtom = atom({
   default: "",
 });
 
-export const filteredQueryResultsSelector = selector<ReadonlyArray<IconEntry>>({
+export const filteredQueryResultsSelector = selector({
   key: "filteredQueryResultsSelector",
   get: ({ get }) => {
     const query = get(searchQueryAtom).trim().toLowerCase();

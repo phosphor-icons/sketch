@@ -1,9 +1,9 @@
 import React from "react";
 import { useRecoilValue } from "recoil";
 
-import { systemDarkModeAtom } from "../../state";
+import { systemDarkModeAtom } from "../state";
 
-const Footer: React.FC<{}> = () => {
+const Footer = () => {
   const isDarkMode = useRecoilValue(systemDarkModeAtom);
   const color = isDarkMode ? "white" : "black";
 
@@ -53,7 +53,11 @@ const Footer: React.FC<{}> = () => {
         </g>
       </svg>
       <span>at</span>
-      <a href="https://phosphoricons.com" target="_blank" rel="noopener">
+      <a
+        href="https://phosphoricons.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         phosphoricons.com
       </a>
     </footer>

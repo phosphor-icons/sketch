@@ -2,15 +2,15 @@ import React from "react";
 import { useRecoilValue } from "recoil";
 import { IconContext, SmileyXEyes } from "phosphor-react";
 
-import { systemDarkModeAtom } from "../../state";
+import { systemDarkModeAtom } from "../state";
 
 import {
   iconWeightAtom,
   filteredQueryResultsSelector,
   searchQueryAtom,
-} from "../../state";
+} from "../state";
 
-const IconGrid: React.FC<{}> = () => {
+const IconGrid = () => {
   const weight = useRecoilValue(iconWeightAtom);
   const icons = useRecoilValue(filteredQueryResultsSelector);
   const query = useRecoilValue(searchQueryAtom);
@@ -18,10 +18,7 @@ const IconGrid: React.FC<{}> = () => {
 
   const color = isDarkMode ? "white" : "black";
 
-  const handleCopyToWorkspace = (
-    event: React.MouseEvent<SVGElement, MouseEvent>,
-    name: string
-  ) => {
+  const handleCopyToWorkspace = (event, name) => {
     const svg = event.currentTarget.outerHTML;
     window.postMessage("insertIcon", JSON.stringify({ name, svg }));
   };
@@ -35,7 +32,7 @@ const IconGrid: React.FC<{}> = () => {
           color={isDarkMode ? "#3F3C47" : "#2C2C2C"}
         />
         <p>
-          No results for "<code>{query}"</code>
+          No results for <code>"{query}"</code>
         </p>
       </div>
     );

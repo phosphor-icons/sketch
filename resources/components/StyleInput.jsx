@@ -3,13 +3,10 @@ import { useSetRecoilState, useRecoilValue } from "recoil";
 import Select from "react-dropdown-select";
 import { CaretDown, CaretUp, PencilLine } from "phosphor-react";
 
-import { iconWeightAtom, systemDarkModeAtom } from "../../state";
-import { IconStyle } from "../../lib";
-import "./StyleInput.css";
+import { iconWeightAtom, systemDarkModeAtom } from "../state";
+import { IconStyle } from "../lib";
 
-type WeightOption = { key: string; value: IconStyle; icon: JSX.Element };
-
-const options: WeightOption[] = [
+const options = [
   {
     key: "Thin",
     value: IconStyle.THIN,
@@ -42,9 +39,7 @@ const options: WeightOption[] = [
   },
 ];
 
-type StyleInputProps = {};
-
-const StyleInput: React.FC<StyleInputProps> = () => {
+const StyleInput = () => {
   const setStyle = useSetRecoilState(iconWeightAtom);
   const isDarkMode = useRecoilValue(systemDarkModeAtom);
 
@@ -53,8 +48,7 @@ const StyleInput: React.FC<StyleInputProps> = () => {
     backgroundColor: isDarkMode ? "#3F3C47" : "transparent",
   };
 
-  const handleStyleChange = (values: WeightOption[]) =>
-    setStyle(values[0].value as IconStyle);
+  const handleStyleChange = (values) => setStyle(values[0].value);
 
   return (
     <Select

@@ -15,7 +15,7 @@ export default function (ctx) {
   };
 
   const browserWindow = new BrowserWindow(options);
-  browserWindow.loadURL("http://localhost:3001");
+  browserWindow.loadURL(require("../resources/webview.html"));
 
   // only show the window when the page has loaded to avoid a white flash
   browserWindow.once("ready-to-show", () => {
