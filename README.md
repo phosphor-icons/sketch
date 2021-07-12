@@ -4,7 +4,7 @@ Phosphor is a flexible icon family for interfaces, diagrams, presentations — w
 
 ## Sketch Plugin
 
-Browse, search, and copy into your project all from within Sketch. To install, visit our [community page](https://www.figma.com/community/plugin/898620911119764089/Phosphor-Icons).
+Browse, search, and copy into your project all from within Sketch. To install, visit our [releases page](https://github.com/phosphor-icons/phosphor-sketch/releases).
 
 <img src="/meta/plugin-demo.gif" />
 
