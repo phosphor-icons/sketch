@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { useDebounce } from "react-use";
-import { X, HourglassHigh } from "phosphor-react";
+import { X, HourglassHigh } from "@phosphor-icons/react";
 
 import { searchQueryAtom, systemDarkModeAtom } from "../state";
 

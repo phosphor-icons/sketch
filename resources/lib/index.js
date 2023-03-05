@@ -1,29 +1,7 @@
-export const IconStyle = {
-  THIN: "thin",
-  LIGHT: "light",
-  REGULAR: "regular",
-  BOLD: "bold",
-  FILL: "fill",
-  DUOTONE: "duotone",
-};
+import { icons as iconData } from "@phosphor-icons/core";
+import * as Icons from "@phosphor-icons/react";
 
-export const IconCategory = {
-  ARROWS: "arrows",
-  BRAND: "brands",
-  COMMERCE: "commerce",
-  COMMUNICATION: "communications",
-  DESIGN: "design",
-  DEVELOPMENT: "technology & development",
-  OFFICE: "office",
-  EDITOR: "editor",
-  FINANCE: "finances",
-  GAMES: "games",
-  HEALTH: "health & wellness",
-  MAP: "maps & travel",
-  MEDIA: "media",
-  NATURE: "nature",
-  OBJECTS: "objects",
-  PEOPLE: "people",
-  SYSTEM: "system",
-  WEATHER: "weather",
-};
+export const icons = iconData.map((entry) => ({
+  ...entry,
+  Icon: Icons[entry.pascal_name],
+}));

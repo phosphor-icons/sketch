@@ -1,6 +1,6 @@
 import React from "react";
 import { useRecoilValue } from "recoil";
-import { IconContext, SmileyXEyes } from "phosphor-react";
+import { IconContext, SmileyXEyes } from "@phosphor-icons/react";
 
 import { systemDarkModeAtom } from "../state";
 
@@ -19,8 +19,16 @@ const IconGrid = () => {
   const color = isDarkMode ? "white" : "black";
 
   const handleCopyToWorkspace = (event, name) => {
-    const svg = event.currentTarget.outerHTML;
-    window.postMessage("insertIcon", JSON.stringify({ name, svg }));
+    const element = event.currentTarget.cloneNode(true);
+    const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+    rect.setAttribute("width", "256");
+    rect.setAttribute("height", "256");
+    rect.setAttribute("fill", "none");
+    element.appendChild(rect);
+    window.postMessage(
+      "insertIcon",
+      JSON.stringify({ name, svg: element.outerHTML })
+    );
   };
 
   if (!icons.length)

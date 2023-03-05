@@ -1,11 +1,16 @@
 import { atom, selector } from "recoil";
 import Fuse from "fuse.js";
+import { IconStyle } from "@phosphor-icons/core";
 
-import { IconStyle } from "../lib";
-import { icons } from "../lib/icons";
+import { icons } from "../lib";
 
 const fuse = new Fuse(icons, {
-  keys: [{ name: "name", weight: 4 }, "tags", "categories"],
+  keys: [
+    { name: "name", weight: 4 },
+    { name: "pascal_name", weight: 4 },
+    "tags",
+    "categories",
+  ],
   threshold: 0.2, // Tweak this to what feels like the right number of results
   // shouldSort: false,
   useExtendedSearch: true,

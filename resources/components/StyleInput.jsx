@@ -1,10 +1,10 @@
 import React from "react";
 import { useSetRecoilState, useRecoilValue } from "recoil";
 import Select from "react-dropdown-select";
-import { CaretDown, CaretUp, PencilLine } from "phosphor-react";
+import { IconStyle } from "@phosphor-icons/core";
+import { CaretDown, CaretUp, PencilLine } from "@phosphor-icons/react";
 
 import { iconWeightAtom, systemDarkModeAtom } from "../state";
-import { IconStyle } from "../lib";
 
 const options = [
   {
