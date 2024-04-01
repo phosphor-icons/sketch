@@ -2,8 +2,8 @@ module.exports = function (config, entry) {
   config.node = entry.isPluginCommand
     ? false
     : {
-        setImmediate: false,
-      };
+      setImmediate: false,
+    };
   config.module.rules.push({
     test: /\.(html)$/,
     use: [
@@ -39,5 +39,10 @@ module.exports = function (config, entry) {
         presets: ["@babel/preset-env", "@babel/preset-react"],
       },
     },
+  });
+  config.module.rules.push({
+    test: /\.mjs$/,
+    include: /node_modules/,
+    type: 'javascript/auto'
   });
 };

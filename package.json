@@ -1,6 +1,6 @@
 {
   "name": "@phosphor-icons/sketch",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "license": "MIT",
   "private": false,
   "homepage": "https://phosphoricons.com",
@@ -35,17 +35,17 @@
     "sketch-assets-file": "sketch-assets/icons.sketch"
   },
   "scripts": {
-    "build": "skpm-build",
-    "watch": "skpm-build --watch",
-    "start": "skpm-build --watch",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && skpm-build",
+    "watch": "export NODE_OPTIONS=--openssl-legacy-provider && skpm-build --watch",
+    "start": "export NODE_OPTIONS=--openssl-legacy-provider && skpm-build --watch",
     "postinstall": "npm run build && skpm-link"
   },
   "resources": [
     "resources/**/*.js"
   ],
   "dependencies": {
-    "@phosphor-icons/core": "^2.0.2",
-    "@phosphor-icons/react": "^2.0.4",
+    "@phosphor-icons/core": "^2.1.1",
+    "@phosphor-icons/react": "^2.1.4",
     "fuse.js": "^6.4.6",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
