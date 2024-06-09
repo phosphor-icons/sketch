@@ -2,6 +2,7 @@ import BrowserWindow from "sketch-module-web-view";
 import { getWebview } from "sketch-module-web-view/remote";
 import UI from "sketch/ui";
 import DOM from "sketch/dom";
+import Settings from "sketch/settings";
 
 const webviewIdentifier = "phosphor-icons.webview";
 
@@ -33,6 +34,17 @@ export default function (ctx) {
   webContents.on("changeSystemTheme", (s) => {
     const isDarkMode = s === "true";
     UI.message(isDarkMode ? "Paint it black 🖤" : "Paint it white 🤍");
+  });
+
+  webContents.on("configChanged", (messageString) => {
+    Settings.setSettingForKey("config", JSON.parse(messageString));
+  });
+
+  webContents.on("configRequested", () => {
+    const cfg = Settings.settingForKey("config") ?? {};
+    browserWindow.webContents
+      .executeJavaScript(`initializeState(${JSON.stringify(cfg)})`)
+      .catch(() => {});
   });
 
   webContents.on("insertIcon", (messageString) => {

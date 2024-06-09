@@ -24,6 +24,29 @@ export const systemDarkModeAtom = atom({
 export const iconWeightAtom = atom({
   key: "iconWeightAtom",
   default: IconStyle.REGULAR,
+  effects: [
+    ({ onSet, setSelf }) => {
+      window.initializeState = function (cfg) {
+        const { weight = IconStyle.REGULAR } = (() => {
+          if (typeof cfg === "object") return cfg;
+          try {
+            return JSON.parse(cfg);
+          } catch (_) {
+            return {};
+          }
+        })();
+        setSelf(weight);
+      };
+
+      onSet((weight) => {
+        window.postMessage("configChanged", JSON.stringify({ weight }));
+      });
+
+      setTimeout(() => {
+        window.postMessage("configRequested", "{}").catch(() => {});
+      }, 0);
+    },
+  ],
 });
 
 export const searchQueryAtom = atom({

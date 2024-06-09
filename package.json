@@ -1,6 +1,6 @@
 {
   "name": "@phosphor-icons/sketch",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "license": "MIT",
   "private": false,
   "homepage": "https://phosphoricons.com",
@@ -52,7 +52,7 @@
     "react-dom": "^17.0.2",
     "react-dropdown-select": "^4.7.4",
     "react-use": "^17.2.4",
-    "recoil": "^0.3.1",
+    "recoil": "^0.7.7",
     "sketch-module-web-view": "^3.1.4"
   },
   "devDependencies": {
