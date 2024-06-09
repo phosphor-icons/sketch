@@ -37,7 +37,7 @@ const IconGrid = () => {
         <SmileyXEyes
           size={128}
           weight="duotone"
-          color={isDarkMode ? "#3F3C47" : "#2C2C2C"}
+          color={isDarkMode ? "white" : "#2C2C2C"}
         />
         <p>
           No results for <code>"{query}"</code>

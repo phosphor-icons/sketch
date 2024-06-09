@@ -129,18 +129,18 @@ a {
 }
 .react-dropdown-select-item:hover {
   color: white;
-  background-color: #fe8101 !important;
+  background-color: #FE5100 !important;
 }
 
 .react-dropdown-select-item.react-dropdown-select-item-selected,
 .react-dropdown-select-item.react-dropdown-select-item-active {
   color: white !important;
-  background-color: #fe8101 !important;
+  background-color: #FE5100 !important;
 }
 
 .react-dropdown-select-item:focus {
   color: white !important;
-  background-color: #fe8101 !important;
+  background-color: #FE5100 !important;
 }
 
 .react-dropdown-select-item.react-dropdown-select-item-disabled {

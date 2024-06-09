@@ -1,5 +1,5 @@
 import React from "react";
-import { useSetRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import Select from "react-dropdown-select";
 import { IconStyle } from "@phosphor-icons/core";
 import { CaretDown, CaretUp, PencilLine } from "@phosphor-icons/react";
@@ -40,12 +40,12 @@ const options = [
 ];
 
 const StyleInput = () => {
-  const setStyle = useSetRecoilState(iconWeightAtom);
+  const [style, setStyle] = useRecoilState(iconWeightAtom);
   const isDarkMode = useRecoilValue(systemDarkModeAtom);
 
   const inputStyle = {
     color: isDarkMode ? "white" : "black",
-    backgroundColor: isDarkMode ? "#3F3C47" : "transparent",
+    backgroundColor: isDarkMode ? "#2B2A28" : "transparent",
   };
 
   const handleStyleChange = (values) => setStyle(values[0].value);
@@ -53,7 +53,7 @@ const StyleInput = () => {
   return (
     <Select
       options={options}
-      values={[options[2]]}
+      values={[options.find((o) => o.value === style) ?? options[2]]}
       searchable={false}
       labelField="key"
       onChange={handleStyleChange}

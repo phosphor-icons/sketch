@@ -13,7 +13,7 @@ const SearchInput = () => {
 
   const inputStyle = {
     color: isDarkMode ? "white" : "black",
-    backgroundColor: isDarkMode ? "#3F3C47" : "transparent",
+    backgroundColor: isDarkMode ? "#2B2A28" : "transparent",
   };
 
   const [isReady] = useDebounce(() => setQuery(value), 250, [value]);
