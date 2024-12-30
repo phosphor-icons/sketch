@@ -1,12 +1,14 @@
-# Phosphor Icons
+# @phosphor-icons/sketch
 
-Phosphor is a flexible icon family for interfaces, diagrams, presentations — whatever, really. Explore all our icons at [phosphoricons.com](https://phosphoricons.com).
+<!-- BEGIN_LOGO -->
+<img src="/meta/phosphor-mark-tight-yellow.png" width="128" align="right" />
+<!-- END_LOGO -->
 
-## Sketch Plugin
+Phosphor is a flexible icon family for interfaces, diagrams, presentations — whatever, really. This repository ohuses our Sketch plugin, which allows you to browse, search, and copy icons into your project all from within Sketch. To install, [click here](https://phosphoricons.com/assets/phosphor-icons.sketchplugin.zip) to download our latest relase, or visit our [releases page](https://github.com/phosphor-icons/sketch/releases) to view past releases and changelogs. Explore all our icons at [phosphoricons.com](https://phosphoricons.com).
 
-Browse, search, and copy into your project all from within Sketch. To install, visit our [releases page](https://github.com/phosphor-icons/sketch/releases).
+## Screenshots
 
-<img src="/meta/plugin-demo.gif" />
+<img src="/.github/plugin-demo.gif" />
 
 ## Raw Assets
 
